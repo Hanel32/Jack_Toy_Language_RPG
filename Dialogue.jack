@@ -1,0 +1,225 @@
+
+
+class Dialogue {
+    function String inkeeper() {
+        do Output.println("Welcome to Lamellon, traveller! It seems you've fallen from the sky!");
+        do Output.println("My name is Brutus, and I am the innkeeper of this great city.");
+	do Output.println("In these dark days, we have many uses for an adventurer. What did");
+	do Output.println("you say was your profession?");
+	do Output.println();
+	do Output.println();
+	do Output.println("       .-'''''.");
+	do Output.println("      /   \\    \\");
+	do Output.println("     /   / `\\__/ ");
+	do Output.println("     | .'  _  _|  ");
+	do Output.println("     \(\\    6  6 ");
+	do Output.println("     | \\     \\ :");
+	do Output.println("     |  \\/~` /`\\)        <Brutus the Innkeeper>");
+	do Output.println("      |\\   {= `/");
+	do Output.println("      | '.___.');
+	do Output.println("  .'` \\    |_);
+	do Output.println(" /       '-__ / `-");
+	do Output.println();
+	do Output.println();
+	do Output.println("1) Uhh, sir, I'm no adventurer.  (ranger)");
+	do Output.println("2) I am a mighty Warrior!        (melee )");
+	do Output.println("3) I am a cunning Sorcerrer!     (mage  )");
+        let job = Keyboard.readInt("Answer: ");
+	return job;
+    }
+    function void ranger() {
+	do Output.println("Brutus: Aye lad! Take up this bow! You can be a ranger.");
+	do Output.println();
+  	do Output.println("        (You take the beautifully carved oaken bow, unsure of )");
+ 	do Output.println("        (what to do with it... You guess... Atleast, so far...)");
+	do Output.println();
+ 	do Output.println("Game:   Your 'new job' is Ranger. While the practice may be mysterious,");
+ 	do Output.println("        rest assured, you have within yourself what it takes. Because of this,");
+ 	do Output.println("        your hitpoints have been set to 80. Your attack average, however, is");
+ 	do Output.println("        12 points. You have what it takes. God speed.");
+	// Add initialization of class attributes
+ 	// maxhp   = 80;
+ 	// hp      = 80;
+ 	// attk    = 12;
+ 	// acc     = 10;
+    }
+    function void warrior() {
+	do Output.println("Brutus: Wew! A warrior! Tis been ages since we've seen one proper!");
+	do Output.println();
+	do Output.println("        (You smirk at him, confident in your power. Next to you is an axe)");
+	do Output.println("        (which you brandish, ready for any challenges that may await.");
+	do Output.println();
+	do Output.println("Game:   Your job is Warrior, and you attack with strength and");
+	do Output.println("        vitality. Because of this, your hitpoints have been set to");
+	do Output.println("        120. Your attack average is 8 points. Good luck, and God speed.");
+    }
+    function void mage() {
+	do Output.println("Brutus: Aye? A mage? I'm not fond of the likes of ye...");
+	do Output.println();
+	do Output.println("        (You grimace. The fool! You grab the staff next to you)");
+	do Output.println("        (and head off to whomever is in charge...    Verily...)");
+	do Output.println();
+	do Output.println("Game:   Your job is Mage, and you wield mighty spells.");
+	do Output.println("        Because of this, your intellect is set to 20, and your");
+	do Output.println("        hitpoints have been set to 100. Your attack average is");
+	do Output.println("        10 points. Good luck, and God speed.");
+    }
+    function void inn() {
+	//Waiting on this one. Not sure if it'll even fit w/ screen size.
+    }
+    function int shop() {
+	do Output.println();
+	do Output.println("    You walk over to the merchant's stall to see what goods he offers.");
+	do Output.println();
+	do Output.println("    Merchant: Welcome to my shop of wares! Have a look!";
+	do Output.println("    [-----[Moe's Adventuring Supplies]------]");
+	do Output.println("    [Potions]-----[Weapons]-----[Armor]-----]");
+	do Output.println("    [---------------------------------------]");
+	do Output.println("    [Health]------[Sword]-------[Metal]-----]");
+	do Output.println("    [Attack]------[Wand]--------[Hide]------]");
+	do Output.println("    [Skill]-------[Knife]-------[Cloth]-----]");
+	do Output.println("    [_______________________________________]");
+	do Output.println("    Please enter the type of item you would like");
+	do Output.println("    Enter (1) for potions, (2) for weapons, and (3) for armor: ");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int shop_potion() {
+	do Output.println("You've chosen potions!");
+	do Output.println();
+	do Output.println("Which potion would you like?");
+	do Output.println();
+	do Output.println("1)Health: Increases health by (10),        costs 10g.");
+	do Output.println("2)Attack: Increases attack by (5),         costs 50g.");
+	do Output.println("3)Skill : Increases agility skill by (10), costs 99g.");
+	do Output.println("4)No thank you, no purchases for me today.");
+	do Output.println();
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int shop_weapon() {
+	do Output.println("You've chosen weapons!");
+	do Output.println();
+	do Output.println("Which weapon would you like?");
+	do Output.println();
+	do Output.println("1)Sword: Increases total attack by 5. Costs 50g.");
+	do Output.println("2)Wand : Increases total attack by 4. Costs 40g.");
+	do Output.println("3)Knife: Increases total attack by 2. Costs 20g.");
+	do Output.println("4)No thank you. No purchases for me today.");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int shop_armor() {
+	do Output.println("You've chosen Armor!");
+	do Output.println();
+	do Output.println("Which armor would you like?");
+	do Output.println();
+	do Output.println("1)Metal: Increases hp 10, decreases agility by 5. Costs 50g");
+	do Output.println("2)Hide : Increases hp 8 , increases agility by 5. Costs 50g");
+	do Output.println("3)Cloth: Increases hp 5 , increases agility by 8. Costs 50g");
+	do Output.println("4)No thank you. No purchases for me today.");
+	do Output.println();
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int riddle () {
+	do Output.println("You decide it's time for an adventure, and those woods look like just");
+	do Output.println("the place to go. You walk over the shrub laden cobblestone path to an");
+	do Output.println("ancient looking fence, surrounded by flora in beautiful contrasts of");
+	do Output.println("green. Suddenly, an Ent walks out from a shaded area, and stands bef-");
+	do Output.println("ore you in a protective demeanor.");
+	do Output.println();
+	do Output.println("Ent: Hello traveller. It seems you seek entrance to my forrest. While");
+	do Output.println("     it may seem peaceful, danger lurks beyond the shadows at every");
+	do Output.println("     turn. Before I can let you proceed, you must answer a riddle...");
+	do Output.println();
+	do Output.println("     At night, they come without being fetched....");
+	do Output.println("     By day, they are lost without being stolen...");
+	do Output.println();
+	do Output.println("1) Bats! The answer is bats!");
+	do Output.println("2) I believe the answer is stars.");
+	do Output.println("3) Bloody hell, I just want to kill things!");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int riddle_bad() {
+	do Output.println("Ent: Incorrect, please try again.");
+	do Output.println("     At night, they come without being fetched....");
+	do Output.println("     By day, they are lost without being stolen...");
+	do Output.println();
+	do Output.println("1) I'm still positive it's bats!");
+	do Output.println("2) Well, maybe it is stars...?");
+	do Output.println("3) Di'int you 'ear me last time, Ent?!?!");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function void riddle_good() {
+	do Output.println("Ent : Very well, traveller. I hope your might matches your mind.");
+	do Output.println("      Safe travels... And do please watch for my spiders...");
+	do Output.println();
+	do Output.println("Game: The Ent has granted you passage through his forest,");
+	do Output.println("      however, this does not grant you immunity... I do hope you");
+	do Output.println("      have prepared yourself for... 'The Murkwood Forest'...");
+    }
+    function void forest() {
+	do Output.println("       |  |   \\\\|.'    |  |    \\\\|.'   |  |     \\\\|.'  |  |");
+	do Output.println("       | ||   \\` /   _.| ||,!  \\` /   _| ||\\,!  \\` /   | ||  ");
+	do Output.println("       ||||`. f |_.-'.'||||\\`. f |_.-'.|||| \\`. f |_.-'||||    ");
+	do Output.println("       | ||\\ \\|! ,-'   | || \\ \\|! ,-'M | ||  \\ \\|! ,-' | ||");
+	do Output.println("       || |W`. ||  N   || |  `. ||   N || |   `. ||    || |      ");
+	do Output.println("       ||||H `. |  W   ||||  H`. |   W ||||    `. |    ||||      ");
+	do Output.println("       || |N  |L|  M   <   Murkwood Forest   > N|L|    || |      ");
+	do Output.println("       | ||W  ||]  H   | ||  W ||]   H | ||    W||]    | ||      ");
+	do Output.println("       ||||M  [ I  W   ||||  M [ I   W ||||    M[ I    ||||      ");
+	do Output.println("       || |H  I |  M   || |  H I |   M || |    HI |    || |      ");
+	do Output.println("       | [|N, !l| ,H\\  | | /N,!l|  ,H\\| [|  /N!l|    | [|      ");
+	do Output.println("       || |   '-`      || |    '-`     || |     '-`    || |      ");
+	do Output.println("      / '| \\          / '| \\         / '| \\         / '| \\   ");
+	do Output.println("_________________________________________________________________");
+    }
+    function int forest_quest() {
+	do Output.println("Game: You brush past the Ent, through the gate. As you do, the light");
+	do Output.println("      around you starts to dim and thick, ancient forest begins to");
+	do Output.println("      surround you. In the distance you hear the cries of strange c-");
+	do Output.println("      reatures, and you cautiously look around. Underneath you, you");
+	do Output.println("      notice a pathway, which you begin to take. As you travel across");
+	do Output.println("      the ne'er trod earth, you come upon a shoddy sign muddled with");
+	do Output.println("      what looks to be wormholes, painted in a reddish-black ink reading:");
+	do Output.println("      1) The Dark Hollow");
+      	do Output.println("      2) The Silken Fields");     
+	do Output.println("      3) Spiderling's Grove");
+	do Output.println("      Brave adventurer, which path doth thou choose?: "); 
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int dark_hollow() {
+	do Output.println("Game: You have chosen to venture to the Dark Hollow. You take a left");
+	do Output.println("      and peer down the path ahead of you. The lack of sunlight forces");
+	do Output.println("      your human eyes to refocus, and adjust. In front of you, you be-");
+	do Output.println("      gin to make out the mangled bodies of dark briar trees, foretel-");
+	do Output.println("      ling what may become of your fate. No matter, you are brave. You");
+	do Output.println("      continue on until you reach a gargantuan structure. Bark and ma-");
+	do Output.println("      ssive fingers splayed in a gruesome symphony of gloom rise above");
+	do Output.println("      you, taunting your existence. A once giant of the forest lay ho-");
+	do Output.println("      llow before you. At the base of the massive tree, you see a dark");
+	do Output.println("      opening, seemingly just big enough to squeeze into and look.....");
+	do Output.println();
+	do Output.println("      What will you do?");
+	do Output.println();
+	do Output.println("      1) Run back to town. My life isn't worth this!");
+	do Output.println("      2) I am a bold adventurer! I can brave anything.");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+    function int first_fight() {
+	do Output.println("Game:You run into the dark hallow with your newfound gallantry. As");
+	do Output.println("     you do, a spiderling jumps out and attacks you! Brave hero, what");
+	do Output.println("     shall you do?!\n");
+	do Output.println("     1) Run back to town. My life isn't worth this!");
+	do Output.println("     2) Kill the bugger! It's my life or his!");
+	let decision = Keyboard.readInt("    Answer: ");
+	return decision;
+    }
+
+
+	
