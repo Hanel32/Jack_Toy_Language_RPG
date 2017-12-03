@@ -625,6 +625,8 @@ class Dialogue {
 =======
     function void fight_active() {
         var int spider_health;
+	var int spider_health_max;
+	var int spider_attack;
         let spider_health     = 100;
         let spider_health_max = 100;
         let spider_attack     = 10;
