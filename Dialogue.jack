@@ -372,11 +372,19 @@ class Dialogue {
             do Dialogue.beggar_leave();
         }
         if (decision = 2) {
-            do Dialogue.beggar_advice();
-        }
-        if (decision = 3) {
             do Dialogue.beggar_help();
         }
+        return;
+    }
+    function void beggar_leave() {
+        do Dialogue.print("Game:   You choose to walk away. You've got your own problems as");
+        do Dialogue.print("        an adventurer. Surely, someone else will come and help..");
+        do Dialogue.print("        As you turn away to return to the inn, you look back at");
+        do Dialogue.print("        the beggar in a moment of second guessing, and see that");
+        do Dialogue.print("        the birds that were flying overhead had swooped down to");
+        do Dialogue.print("        claim their prey. Perhaps next time, traveller, you'll");
+        do Dialogue.print("        think twice about your actions... The realization of");
+        do Dialogue.print("        what you've done hits you, and you lose 10 hit points...");
         return;
     }
 }
