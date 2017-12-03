@@ -101,10 +101,6 @@ class Dialogue {
         return;
     }
 
-    function void beggar() {
-        return;
-    }
-
     function void shop() {
         var int decision;
         do Output.moveCursor(0,0);
@@ -334,20 +330,20 @@ class Dialogue {
         var int decision;
         do Output.moveCursor(0,0);
  		do Screen.clearScreen();
-        do Dialogue.print("________.    ._____________________________.               _/////////) ");
-        do Dialogue.print("(///(////\\  ///(///(///(///(///(///(///(////\\          _//////////|| ");
-        do Dialogue.print("///(///(  \\///(///(///(///(///(///(///(///(  \\        ////////////|| ");
-        do Dialogue.print("//(///(   ///(///(///(///(///(///(///(///(   |         (|<Moe's>|)//|| ");
-        do Dialogue.print("/(///(  .///(///(///(///(///(///(///(///(  . |         ||/______||  || ");
-        do Dialogue.print("    | .' |  ___    ___    ___   _____  | .'| |         | _______||  II ");
-        do Dialogue.print("    | |.'| |_|_|  |_|_|  |_|_| |__|__| | |.' |         ||       || ");
-        do Dialogue.print("    | '  | |_|_|  |_|_|  |_|_| |__|__| | ' . ||'--:    II       II ");
-        do Dialogue.print("__  |  .'|    __   _____   ___   ___   | .'| |  .|   .  ");
-        do Dialogue.print("__| | |.'|   |  | |__|__| |_|_| |_|_|  ||.' .'.|   .'    ");
-        do Dialogue.print("__| | '.'|   | .| |__|__| |_|_| |_|_|  |' .'.|   .'     ");
-        do Dialogue.print("____|.'  |___|__|______________________|.'.|   .'      ");
-        do Dialogue.print("      .|     '   .    <The Inn>        .|    .'          ");
-        do Dialogue.print("    |'--'|==||'--'|'--'|'--'|'--'|'-'|   .'          ");
+        do Dialogue.print("__.    ._____________________________.     ");
+        do Dialogue.print("///\\  ///(///(///(///(///(///(///(////\\  ");
+        do Dialogue.print("/(  \\///(///(///(///(///(///(///(///(  \\ ");
+        do Dialogue.print("(   ///(///(///(///(///(///(///(///(    |   ");
+        do Dialogue.print("  .///(///(///(///(///(///(///(///(  .  |   ");
+        do Dialogue.print(".' |  ___    ___    ___   _____  | .'|  |             _/////////");
+        do Dialogue.print("|.'| |_|_|  |_|_|  |_|_| |__|__| | |.'  |           _//////////|");
+        do Dialogue.print("'  | |_|_|  |_|_|  |_|_| |__|__| | ' .  ||'--:     ////////////|");
+        do Dialogue.print(" .'|    __   _____   ___   ___   | .'|  |  .|   . (|<Moe's>|)//|");
+        do Dialogue.print("|.'|   |  | |__|__| |_|_| |_|_|  ||.' .'.|   .'   |/______||   |");
+        do Dialogue.print("'.'|   | .| |__|__| |_|_| |_|_|  |' .'.|   .'     | _______||  I");
+        do Dialogue.print("'  |___|__|______________________|.'.|   .'       ||       || ");
+        do Dialogue.print(".|     '   .    <The Inn>        .|    .'         II       II ");
+        do Dialogue.print("--'|==||'--'|'--'|'--'|'--'|'-'|   .'          ");
         do Dialogue.interactiveDelay();
         
         do Output.moveCursor(0,0);
@@ -473,7 +469,6 @@ class Dialogue {
         do Dialogue.questHub();
         return;
     }
-=======
     
     function void beggar() {
         var int decision;
@@ -502,6 +497,7 @@ class Dialogue {
         }
         return;
     }
+    
     function void beggar_leave() {
         do Output.moveCursor(0,0);
         do Dialogue.print("Game:   You choose to walk away. You've got your own problems as");
@@ -514,6 +510,7 @@ class Dialogue {
         do Dialogue.print("        what you've done hits you, and you lose 10 hit points...");
         return;
     }
+    
     function void beggar_help() {
         do Output.moveCursor(0,0);
         do Dialogue.print("Game:   You smile with understanding, and reach into your pocket");
@@ -527,6 +524,7 @@ class Dialogue {
         do Dialogue.interactiveDelay();
         do Dialogue.wizard_beggar();
     }
+    
     function void wizard_beggar() { 
         do Output.moveCursor(0,0);
         do Dialogue.print("                \  )(  /");
@@ -548,6 +546,4 @@ class Dialogue {
         do Dialogue.print("  |         |      ||");
         do Dialogue.print("  |_________|      ||");
     }
-        
->>>>>>> cb935a0acdc2a6b2719fbd1018247b878efe492d
 }
