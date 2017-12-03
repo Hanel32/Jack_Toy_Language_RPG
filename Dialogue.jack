@@ -59,15 +59,15 @@ class Dialogue {
 
     function void warrior() {
         do Output.moveCursor(0,0);
-        do Screen.clearScreen();
-        do Dialogue.print("Brutus: Wew! A warrior! Tis been ages since we've seen one proper!");
+        do Screen.clearScreen();   
+        do Dialogue.print("Brutus: Wew! A warrior! Tis been ages since we seen one proper!");
         do Output.println();
-        do Dialogue.print("        (You smirk at him, confident in your power. Next to you is an axe)");
-        do Dialogue.print("        (which you brandish, ready for any challenges that may await.");
+        do Dialogue.print("  (You smirk, confident in your power. Next to you is an axe)");
+        do Dialogue.print("  (which you brandish, ready for any challenges that may await.");
         do Output.println();
         do Dialogue.print("Game:   Your job is Warrior, and you attack with strength and");
-        do Dialogue.print("        vitality. Because of this, your hitpoints have been set to");
-        do Dialogue.print("        120. Your attack average is 8 points. Good luck, and God speed.");
+        do Dialogue.print("        vitality. Because of this, your hitpoints have been set");
+        do Dialogue.print("        to 120. Your attack average is 8 points. Good luck!");
         return;
     }
 
@@ -95,7 +95,7 @@ class Dialogue {
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
         do Output.println();
-        do Dialogue.print("    You walk over to the merchant's stall to see what goods he offers.");
+        do Dialogue.print("    You walk over to the merchant's stall.");
         do Output.println();
         do Dialogue.print("    Merchant: Welcome to my shop of wares! Have a look!");
         do Dialogue.print("    [-----[Moe's Adventuring Supplies]------]");
@@ -106,7 +106,9 @@ class Dialogue {
         do Dialogue.print("    [Skill]-------[Knife]-------[Cloth]-----]");
         do Dialogue.print("    [_______________________________________]");
         do Dialogue.print("    Please enter the type of item you would like");
-        do Dialogue.print("    Enter (1) for potions, (2) for weapons, and (3) for armor: ");
+        do Dialogue.print("    Enter (1) for potions,");
+        do Dialogue.print("          (2) for weapons,"); 
+        do Dialogue.print("          (3) for armor ");
         let decision = Keyboard.readInt("    Answer: ");
         return decision;
     }
