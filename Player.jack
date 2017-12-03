@@ -162,24 +162,48 @@ class Player {
         do Player.rand();
         return;
     }
+
+    function int potionChecker(int type) {
+        var int returnQuant;
+        if (type = 0) {
+            let returnQuant = health_pot;
+        }
+        if (type = 1) {
+            let returnQuant = attack_pot;
+        }
+        if (type = 2) {
+            let returnQuant = skill_pot;
+        }
+        return returnQuant;
+    }
+
     // Potion drinker
     function void drinkPotion(int type){
         if (type = 0) {
-            let health_pot = health_pot - 1;
-            let current_hp = current_hp + 25;
-            if(current_hp > max_hp) {
-                let current_hp = max_hp;
+            if(health_pot > 0) {
+                let health_pot = health_pot - 1;
+                let current_hp = current_hp + 25;
+                if(current_hp > max_hp) {
+                    let current_hp = max_hp;
+                }
             }
+            else {do Dialogue.print("No health potions in inventory!");}
             return;
         }
         if (type = 1) {
-            let attack_pot = attack_pot - 1;
-            let attack     = attack + 5;
+            if(attack_pot > 0) {
+                let attack_pot = attack_pot - 1;
+                let attack     = attack + 5;
+            }
+            else {do Dialogue.print("No attack potions in inventory!");}
             return;
         }
         if (type = 2) {
-            let skill_pot  = skill_pot  - 1;
-            let skill      = skill + 10;
+            if(skill_pot > 0) {
+                let skill_pot  = skill_pot  - 1;
+                let skill      = skill + 10;
+            }
+            else {do Dialogue.print("No health potions in inventory!");}
             return;
         }
         do Player.rand();
