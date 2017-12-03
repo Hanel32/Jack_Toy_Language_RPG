@@ -1,0 +1,152 @@
+class Player() {
+    // Player associated variables
+    var int gold;                              // Player's gold 
+    var int job;                               // Player's job
+    var int health_pot, attack_pot, skill_pot; // Player's potions
+    var int current_hp, max_hp;                // Player's health
+    var int attack, defence, skill, acc;       // Player's attributes
+    var int item_1, item_2, item_3;            // Items needed for boss
+
+    // Initialization of Player variables
+    function void init(){
+        let gold       = 100;
+        let skill      = 10;
+        let job        = 0;
+        let attack     = 0;
+        let defence    = 0;
+        let max_hp     = 100;
+        let current_hp = 100;
+        let health_pot = 0;
+        let attack_pot = 0;
+        let skill_pot  = 0;
+        return;
+    }
+  
+    // Interactive player class commands
+    // Gold setter
+    function void setGold(int coins) {
+        let gold = coins;
+        return;
+    }
+
+    // Gold getter
+    function int getGold(){
+        return gold;
+    }
+
+    // Skill setter
+    function void setSkill(int agil) {
+        let skill = agil;
+        return;
+    }
+
+    // Skill getter
+    function int getSkill(){
+        return skill;
+    }
+
+    // Attack setter
+    function void setAttack(int att){
+        let attack = att;
+        return;
+    }
+
+    // Attack getter
+    function int getAttack(){
+        return attack;
+    }
+
+    // Defence setter
+    function void setDefence(int def){
+        let defence = def;
+        return;
+    }
+
+    // Defence getter
+    function int getDefence(){
+        return defence;
+    }
+
+    // Health setter
+    function void setHealth(int hp){
+        let current_hp = hp;
+        return;
+    }
+
+    // Health getter
+    function int getHealth(){
+        return current_hp;
+    }
+
+    // Max Health setter
+    function void setMaxHealth(int hp){
+        let max_hp = hp;
+        return;
+    }
+
+    // Max Health getter
+    function int getMaxHealth(){
+        return max_hp;
+    }
+    
+    // Job setter
+    function void setJob(int occ){
+        let job = occ;
+        return;
+    }
+
+    // Accuracy getter
+    function int getAccuracy(){
+        return acc;
+    }
+    
+    // Acccuracy setter
+    function void setAccuracy(int a){
+        let acc = a;
+        return;
+    }
+
+    // Job getter
+    function int getJob(){
+        return Job;
+    }
+
+    // Potion adder
+    function void addPotion(int type, int quantity){
+        if (type == 0) {
+            let health_pot = health_pot + quantity;
+        }
+        if (type == 1) {
+            let attack_pot = attack_pot + quantity;
+        }
+        if (type == 2) {
+            let skill_pot  = skill_pot  + quantity;
+        }
+    }
+    // Potion drinker
+    function void drinkPotion(int type){
+        if (type == 0) {
+            let health_pot = health_pot - 1;
+            let current_hp = current_hp + 25;
+            if(current_hp > max_hp) {
+                let current_hp = max_hp;
+                return;
+            }
+            else{
+                return;
+            }
+        }
+        if (type == 1) {
+            let attack_pot = attack_pot - 1;
+            let attack     = attack + 5;
+            return;
+        }
+        if (type == 2) {
+            let skill_pot  = skill_pot  - 1;
+            let skill      = skill + 10;
+            return;
+        }
+        return;
+    }
+}
+
