@@ -1,14 +1,16 @@
-class Player() {
-    // Player associated variables
-    var int gold;                              // Player's gold 
-    var int job;                               // Player's job
-    var int health_pot, attack_pot, skill_pot; // Player's potions
-    var int current_hp, max_hp;                // Player's health
-    var int attack, defence, skill, acc;       // Player's attributes
-    var int item_1, item_2, item_3;            // Items needed for boss
+class Player {
+        
+    // Player associated staticiables
+    static int gold;                              // Player's gold 
+    static int job;                               // Player's job
+    static int health_pot, attack_pot, skill_pot; // Player's potions
+    static int current_hp, max_hp;                // Player's health
+    static int attack, defence, skill, acc;       // Player's attributes
+    static int item_1, item_2, item_3;            // Items needed for boss
 
     // Initialization of Player variables
     function void init(){
+        
         let gold       = 100;
         let skill      = 10;
         let job        = 0;
@@ -108,40 +110,38 @@ class Player() {
 
     // Job getter
     function int getJob(){
-        return Job;
+        return job;
     }
 
     // Potion adder
     function void addPotion(int type, int quantity){
-        if (type == 0) {
+        if (type = 0) {
             let health_pot = health_pot + quantity;
         }
-        if (type == 1) {
+        if (type = 1) {
             let attack_pot = attack_pot + quantity;
         }
-        if (type == 2) {
+        if (type = 2) {
             let skill_pot  = skill_pot  + quantity;
         }
+        return;
     }
     // Potion drinker
     function void drinkPotion(int type){
-        if (type == 0) {
+        if (type = 0) {
             let health_pot = health_pot - 1;
             let current_hp = current_hp + 25;
             if(current_hp > max_hp) {
                 let current_hp = max_hp;
-                return;
             }
-            else{
-                return;
-            }
+            return;
         }
-        if (type == 1) {
+        if (type = 1) {
             let attack_pot = attack_pot - 1;
             let attack     = attack + 5;
             return;
         }
-        if (type == 2) {
+        if (type = 2) {
             let skill_pot  = skill_pot  - 1;
             let skill      = skill + 10;
             return;

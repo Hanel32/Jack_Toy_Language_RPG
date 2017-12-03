@@ -1,51 +1,57 @@
-
-
 class Main {
-    // Player Variables
-    var int job;
-    var int waitloop;
-    var int quest;
-    let waitloop = 1;
-    
-    // Classes to be used for the game
-    do Dialogue.init();
-    do Player.init();
+    function void main() {
+        // Player Variables
+        var int job;
+        var int waitloop;
+        var int quest;
+        let waitloop = 1;
+        
+        // Classes to be used for the game
+        do Dialogue.init();
+        do Player.init();
 
-    // Program flow
-    do Player.setJob(Dialogue.innkeeper());
-    let job = Player.getJob();
+        // Program flow
+        do Player.setJob(Dialogue.innkeeper());
+        let job = Player.getJob();
 
-    // Brutus job dialogue and initialization
-    if(job == 1) {
-        do Player.setMaxHealth(80);
-        do Player.setHealth(80);
-        do Player.setAttack(12);
-        do Player.setAccuracy(10);
-        do Dialogue.ranger();
-    }
-    if(job == 2) {
-        do Player.setMaxHealth(120);
-        do Player.setHealth(120);
-        do Player.setAttack(8);
-        do Player.setAccuracy(14);
-        do Dialogue.warrior();
-    }
-    if(job == 3) {
-        do Player.setMaxHealth(100);
-        do Player.setHealth(100);
-        do Player.setAttack(10);
-        do Player.setAccuracy(12);
-        do Dialogue.mage();
-    }
-    // Gives the player time to see his 
-    while(waitloop) {
-        let waitloop = Keyboard.readInt("Enter 0 to continue: ");
-        if(waitloop == 0){
-            let waitloop = 0;
-        else {
-            let waitloop = 1;
+        // Brutus job dialogue and initialization
+        if(job = 1) {
+            do Player.setMaxHealth(80);
+            do Player.setHealth(80);
+            do Player.setAttack(12);
+            do Player.setAccuracy(10);
+            do Dialogue.ranger();
         }
+
+        if(job = 2) {
+            do Player.setMaxHealth(120);
+            do Player.setHealth(120);
+            do Player.setAttack(8);
+            do Player.setAccuracy(14);
+            do Dialogue.warrior();
+        }
+
+        if(job = 3) {
+            do Player.setMaxHealth(100);
+            do Player.setHealth(100);
+            do Player.setAttack(10);
+            do Player.setAccuracy(12);
+            do Dialogue.mage();
+        }
+
+        // Gives the player time to see his 
+        while(waitloop) {
+            let waitloop = Keyboard.readInt("Enter 0 to continue: ");
+            if(waitloop = 0){
+                let waitloop = 0;
+            }
+            else {
+                let waitloop = 1;
+            }
+        }
+
+        let waitloop = 1;
+        do Dialogue.inn();
+        return;
     }
-    let waitloop = 1;
-    do Dialogue.inn()
-    
+}
