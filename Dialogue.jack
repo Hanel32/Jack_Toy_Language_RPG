@@ -10,10 +10,10 @@ class Dialogue {
         var int job;
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
-        do Dialogue.print("Welcome to Lamellon, traveller! It seems you've fallen from the sky!");
+        do Dialogue.print("Welcome to Lamellon, traveller! It seems you've gotten lost!");
         do Dialogue.print("My name is Brutus, and I am the innkeeper of this great city.");
-        do Dialogue.print("In these dark days, we have many uses for an adventurer. What did");
-        do Dialogue.print("you say was your profession?");
+        do Dialogue.print("In these dark days, we have many uses for an adventurer.");
+        do Dialogue.print(" What did you say was your profession?");
         do Output.println();
         do Output.println();
         do Dialogue.print("       .-'''''.");
@@ -41,12 +41,13 @@ class Dialogue {
         do Screen.clearScreen();
         do Dialogue.print("Brutus: Aye lad! Take up this bow! You can be a ranger.");
         do Output.println();
-        do Dialogue.print("        (You take the beautifully carved oaken bow, unsure of )");
-        do Dialogue.print("        (what to do with it... You guess... At least, so far...)");
+        do Dialogue.print("  (You take the beautifully carved oaken bow, unsure of )");
+        do Dialogue.print("  (what to do with it... You guess... At least, so far...)");
         do Output.println();
-        do Dialogue.print("Game:   Your 'new job' is Ranger. While the practice may be mysterious,");
-        do Dialogue.print("        rest assured, you have within yourself what it takes. Because of this,");
-        do Dialogue.print("        your hitpoints have been set to 80. Your attack average, however, is");
+        do Dialogue.print("Game:   Your 'new job' is Ranger. While the practice may be");
+        do Dialogue.print("        mysterious, rest assured, you have within yourself");
+        do Dialogue.print("        what it takes. Because of this, your hitpoints have"); 
+        do Dialogue.print("        been set to 80. Your attack average, however, is");
         do Dialogue.print("        12 points. You have what it takes. God speed.");
         // Add initialization of class attributes
         // maxhp   = 80;
