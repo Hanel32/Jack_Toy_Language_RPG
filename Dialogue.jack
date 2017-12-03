@@ -350,4 +350,33 @@ class Dialogue {
         }
         return;
     }
+    
+    function void beggar() {
+        do Dialogue.print("xxxxYou walk over to the merchant's stall to see what goods he o");
+        do Dialogue.print("Game:   You walk over to a man laying in rags in the ground, the");
+        do Dialogue.print("        air reeks of the stench of death, and birds circle above");
+        do Dialogue.print("        you as you peer down. A horrific sight! Suddenly, a hand");
+        do Dialogue.print("        comes out from under one of the rags, and you hear a sc-");
+        do Dialogue.print("        ratchy, abrasive voice dissonated by the wear of age.");
+        do Dialogue.print();
+        do Dialogue.print("Beggar: Sir... I beg of you, I need not much help, but perhaps");
+        do Dialogue.print("        some spare coin for food... I have not a family and not-");
+        do Dialogue.print("        hing I could give, but my eternal thanks and gratitude..");
+        do Dialogue.print();
+        do Dialogue.print("Game:   Traveller, the decision is in your hands.");
+        do Dialogue.print("            1) Bah! His issues are not my own. I have to live!");
+        do Dialogue.print("            2) Just give him some good old advice.");
+        do Dialogue.print("            3) Give the man 5 gold for bread, he needs it more.");
+        let decision = Keyboard.readInt("    Answer: ");
+        if (decision = 1) {
+            do Dialogue.beggar_leave();
+        }
+        if (decision = 2) {
+            do Dialogue.beggar_advice();
+        }
+        if (decision = 3) {
+            do Dialogue.beggar_help();
+        }
+        return;
+    }
 }
