@@ -4,10 +4,10 @@ class Main {
         var int job;
         var int waitloop;
         var int quest;
-        let waitloop = 1;
+        let waitloop = -1;
         
         // Classes to be used for the game
-        do Dialogue.init();
+        //do Dialogue.init();
         do Player.init();
 
         // Program flow
@@ -38,20 +38,16 @@ class Main {
             do Player.setAccuracy(12);
             do Dialogue.mage();
         }
-
-        // Gives the player time to see his 
+        
+        do Output.println();
+        do Output.println();
+        // Gives the player time to see this 
         while(waitloop) {
             let waitloop = Keyboard.readInt("Enter 0 to continue: ");
-            if(waitloop = 0){
-                let waitloop = 0;
-            }
-            else {
-                let waitloop = 1;
-            }
         }
 
-        let waitloop = 1;
-        do Dialogue.inn();
+        do Dialogue.questhub();
+
         return;
     }
 }

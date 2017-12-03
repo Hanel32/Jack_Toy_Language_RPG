@@ -31,7 +31,7 @@ class Dialogue {
         do Output.println();
         do Dialogue.print("1) Uhh, sir, I'm no adventurer.  (ranger)");
         do Dialogue.print("2) I am a mighty Warrior!        (melee )");
-        do Dialogue.print("3) I am a cunning Sorcerrer!     (mage  )");
+        do Dialogue.print("3) I am a cunning Sorcerer!     (mage  )");
             let job = Keyboard.readInt("Answer: ");
         return job;
     }
@@ -86,11 +86,11 @@ class Dialogue {
         return;
     }
 
-    function void inn() {
-        return; //Waiting on this one. Not sure if it'll even fit w/ screen size.
+    function void beggar() {
+        return;
     }
 
-    function int shop() {
+    function void shop() {
         var int decision;
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
@@ -110,7 +110,16 @@ class Dialogue {
         do Dialogue.print("          (2) for weapons,"); 
         do Dialogue.print("          (3) for armor ");
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.shop_potion();
+        }
+        if (decision = 2) {
+            do Dialogue.shop_weapon();
+        }
+        if (decision = 3) {
+            do Dialogue.shop_armor();
+        }
+        return;
     }
 
     function int shop_potion() {
@@ -288,5 +297,53 @@ class Dialogue {
         do Dialogue.print("     2) Kill the bugger! It's my life or his!");
         let decision = Keyboard.readInt("    Answer: ");
         return decision;
+    }
+
+    function void questHub() {
+        var int decision;
+        do Output.moveCursor(0,0);
+ 		do Screen.clearScreen();
+        do Dialogue.print("________.    ._____________________________.                          ");
+        do Dialogue.print("(///(////\\  ///(///(///(///(///(///(///(////\\                       ");
+        do Dialogue.print("///(///(  \\///(///(///(///(///(///(///(///(  \\                      ");
+        do Dialogue.print("//(///(   ///(///(///(///(///(///(///(///(   |                        ");
+        do Dialogue.print("/(///(  .///(///(///(///(///(///(///(///(  . |                        ");
+        do Dialogue.print("    | .' |  ___    ___    ___   _____  | .'| |                        ");
+        do Dialogue.print("    | |.'| |_|_|  |_|_|  |_|_| |__|__| | |.' |                        ");
+        do Dialogue.print("    | '  | |_|_|  |_|_|  |_|_| |__|__| | ' . ||'--:|___._______.________________");
+        do Dialogue.print("__  |  .'|    __   _____    _ +++____  | .'| |  .|   .'    _/////////)");
+        do Dialogue.print("__| | |.'|   |  | |__|__|  |_+++++___| ||.' .'.|   .'    _//////////||");
+        do Dialogue.print("__| | '.'|   | .| |__|__|  |+++:++___| |' .'.|   .'     ////////////||");
+        do Dialogue.print("____|.'  |___|__|___________++::+______|.'.|   .'      (|<Moe's>|)//||");
+        do Dialogue.print("       .|   '-=-.'            :'       .|    .'        ||'/_____||/ ||");
+        do Dialogue.print("     .|   '   .    <The Inn>  :      .|    .'         .||/______||  ||");
+        do Dialogue.print("   .|   '   .                       .|   .'         .' | _______||  II");
+        do Dialogue.print("  |'--'|==||'--'|'--'|'--'|'--'|'-'|   .'         .'., ||       ||,.     ");
+        do Dialogue.print("======================================'         .'     II       II      +++");
+        do Dialogue.print("                                              .'         '     '       +++++");
+        do Dialogue.print("                                              '''''''''''     '   +   +++:++");
+        do Dialogue.print("================================.                            ' ;      ++::+");
+        do Dialogue.print("   +   +       +       +      .'         .'''''''''''''''''''           :'");
+        do Dialogue.print("    ;     '    '+   +       .'         .'   +     '    ,       +        :");
+        do Dialogue.print("________________________________________________________________________________");
+        do Dialogue.print("You open a weathered spruce door, and step out of the damp");
+        do Dialogue.print("of the inn, into the half-light of the morning. Birds chirp h-");
+        do Dialogue.print("appily around you. In front of you, you see a merchant, aswell");
+        do Dialogue.print("as several pathways. In which direction will start questing?");
+        do Dialogue.print("     1) The merchant seems like a good choice.");
+        do Dialogue.print("     2) I see a path to a wooded forest. Time to adventure!");
+        do Dialogue.print("     3) There's a man that seems to be in need of help, I'll");
+        do Dialogue.print("   go and see if he needs any assistance.");
+        let decision = Keyboard.readInt("    Answer: ");
+        if (decision = 1) {
+            do Dialogue.shop();
+        }
+        if (decision = 2) {
+            do Dialogue.forest();
+        }
+        if (decision = 3) {
+            do Dialogue.beggar();
+        }
+        return;
     }
 }
