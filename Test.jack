@@ -1,0 +1,20 @@
+class Test {
+    function void test() {
+        do Dialogue.innkeeper();
+        do Dialogue.shop();
+        do Dialogue.ranger();
+        do Dialogue.warrior();
+        do Dialogue.mage();
+        do Dialogue.shop_potion();
+        do Dialogue.shop_weapon();
+        do Dialogue.shop_armor();
+        do Dialogue.riddle();
+        do Dialogue.riddle_bad();
+        do Dialogue.riddle_good();
+        do Dialogue.forest();
+        do Dialogue.forest_quest();
+        do Dialogue.dark_hollow();
+        do Dialogue.first_fight();
+        return;
+    }
+}
