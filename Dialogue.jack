@@ -598,6 +598,7 @@ class Dialogue {
         do Dialogue.questHub();
         return;
     }
+<<<<<<< HEAD
 
     function void usePotion() {
         var int decision;
@@ -621,4 +622,119 @@ class Dialogue {
         do Dialogue.print("COMBAT PLACEHOLDER");
         return;
     } 
+=======
+    function void fight_active() {
+        var int spider_health;
+        let spider_health     = 100;
+        let spider_health_max = 100;
+        let spider_attack     = 10;
+        while (~(spider_health > 0)) {
+            if (~(spider_health < 30)) {
+                if(Dialogue.beggarFlag = 1) {
+                    Output.print("     The spider begins to shriek in pain! Keep going!");
+                    let spider_attack = spider_attack - 5;
+                }
+                else {
+                    var int hp_gained;
+                    let hp_gained = Player.mod(Player.rand(), 5);
+                    let spider_health = spider_health + hp_gained;
+                    Output.print("     The spider, being hurt, begins to feed on her young to heal!!!");
+                    Output.printString("     The spider managed to heal ");
+                    Output.printInt(hp_gained);
+                    Output.printInt("!");
+                    Output.println();
+                 }
+            }       
+	    do Output.printString("     You run towards the spider and attack with your ");
+            if(Player.getJob() = 1) {
+                do Output.printString("bow!");
+                do Output.println();
+            }
+            if(Player.getJob() = 2) {
+                do Output.printString("battleaxe!");
+                do Output.println();
+            }
+            if(Player.getJob() = 3) {
+                do Output.printString("spells!");
+                do Output.println();
+            } 
+            var int hit;
+            let hit = Player.mod(Player.rand(), 20) + Player.getAccuracy();
+            do Output.printString("     Your roll for hit chance with accuracy is: ");
+            do Output.printInt(hit);
+            do Output.println();
+            do Output.print("     The spider's chitinous armour provides 15 points of protection.");
+            if(~(hit > 14) {
+                do Output.printString("     Your");
+                if(Player.getJob() = 1) {
+                    do Output.printString(" arrow lodges deep into the spider!");
+                    do Outpit.println();
+                }
+                if(Player.getJob() = 2) {
+                    do Output.printString(" battleaxe drives deep into the spider!");
+                    do Output.println();
+                }
+                if(Player.getJob() = 3) {
+                    do Output.printString(" spell crackles neon blue through the spider!");
+                    do Output.println();
+                }
+                var int dmg;
+                let dmg = Player.mod(Player.rand(), Player.getAttack());
+                do Output.printString("     You deal ");
+                do Output.printInt(dmg);
+                do Output.printString(" damage to the spider!");
+                do Output.println();
+                let spider_health = spider_health - dmg;
+                do Output.printString("    The spider's health is now: ");
+                do Output.printInt(spider_health);
+                do Output.printString(" / ");
+                do Output.printInt(spider_max_health);
+                do Output.println();
+                do Output.println();
+                do Output.print("     The spider prepares to relate... it climbs and jumps, attacking you!");
+                var int spider_hit;
+                let spider_hit = Player.mod(Player.rand(), spider_attack);
+                do Output.printString("     The spider deals ");
+                do Output.printInt(spider_hit);
+                do Output.printString(" damage to you!");
+                do Output.println();
+                do Player.setHealth(Player.getHealth() - spider_hit);
+                do Output.printString("     You now have ");
+                do Output.printInt(Player.getHealth());
+                do Output.printString(" health left.");
+                do Output.println();
+                var int drink;
+                do Output.print("     Would you like to drink a potion before attacking again?!");
+                do Output.print("     1) Yes, please!");
+                do Output.print("     2) No, I want to stay in the fight!");
+                let drink = Keyboard.readInt("     Answer: ");
+                if (drink = 1) {
+                    Dialogue.drink_potion();
+                }
+            }
+            else {
+                do Output.print("     Unfortunately, you miss the spider alltogether!");
+                do Output.print("     The spider prepares to relate... it climbs and jumps, attacking you!");
+                var int spider_hit;
+                let spider_hit = Player.mod(Player.rand(), spider_attack);
+                do Output.printString("     The spider deals ");
+                do Output.printInt(spider_hit);
+                do Output.printString(" damage to you!");
+                do Output.println();
+                do Player.setHealth(Player.getHealth() - spider_hit);
+                do Output.printString("     You now have ");
+                do Output.printInt(Player.getHealth());
+                do Output.printString(" health left.");
+                do Output.println();
+                var int drink;
+                do Output.print("     Would you like to drink a potion before attacking again?!");
+                do Output.print("     1) Yes, please!");
+                do Output.print("     2) No, I want to stay in the fight!");
+                let drink = Keyboard.readInt("     Answer: ");
+                if (drink = 1) {
+                    Dialogue.drink_potion();
+                }
+            }
+        }
+    }
 }
