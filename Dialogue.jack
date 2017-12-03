@@ -6,6 +6,7 @@ class Dialogue {
         while(waitloop) {
             let waitloop = Keyboard.readInt("Enter 0 to continue: ");
         }
+        do Player.rand();
         return;
     }
 
@@ -13,6 +14,7 @@ class Dialogue {
         do Output.printString(s);
         do Output.println();
         do s.dispose();
+        do Player.rand();
         return;
     }
 

@@ -1,4 +1,40 @@
+function Player.mod 0
+label WHILE_EXP0
+push argument 0
+push argument 1
+gt
+not
+if-goto WHILE_END0
+push argument 0
+push argument 1
+sub
+pop argument 0
+goto WHILE_EXP0
+label WHILE_END0
+push argument 0
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+neg
+pop argument 0
+label IF_FALSE0
+push argument 0
+return
+function Player.rand 0
+push constant 199
+push static 14
+call Math.multiply 2
+push constant 7919
+call Player.mod 2
+pop static 14
+push static 14
+return
 function Player.init 0
+push constant 0
+pop static 14
 push constant 100
 pop static 0
 push constant 10
@@ -24,65 +60,97 @@ return
 function Player.setGold 0
 push argument 0
 pop static 0
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getGold 0
+call Player.rand 0
+pop temp 0
 push static 0
 return
 function Player.setSkill 0
 push argument 0
 pop static 9
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getSkill 0
+call Player.rand 0
+pop temp 0
 push static 9
 return
 function Player.setAttack 0
 push argument 0
 pop static 7
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getAttack 0
+call Player.rand 0
+pop temp 0
 push static 7
 return
 function Player.setDefence 0
 push argument 0
 pop static 8
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getDefence 0
+call Player.rand 0
+pop temp 0
 push static 8
 return
 function Player.setHealth 0
 push argument 0
 pop static 5
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getHealth 0
+call Player.rand 0
+pop temp 0
 push static 5
 return
 function Player.setMaxHealth 0
 push argument 0
 pop static 6
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getMaxHealth 0
+call Player.rand 0
+pop temp 0
 push static 6
 return
 function Player.setJob 0
 push argument 0
 pop static 1
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getAccuracy 0
+call Player.rand 0
+pop temp 0
 push static 10
 return
 function Player.setAccuracy 0
 push argument 0
 pop static 10
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.getJob 0
+call Player.rand 0
+pop temp 0
 push static 1
 return
 function Player.addPotion 0
@@ -119,6 +187,8 @@ push argument 1
 add
 pop static 4
 label IF_FALSE2
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Player.drinkPotion 0
@@ -182,5 +252,7 @@ pop static 9
 push constant 0
 return
 label IF_FALSE3
+call Player.rand 0
+pop temp 0
 push constant 0
 return

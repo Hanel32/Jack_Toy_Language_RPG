@@ -54,6 +54,8 @@ call Keyboard.readInt 1
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
+call Player.rand 0
+pop temp 0
 push constant 0
 return
 function Dialogue.print 0
@@ -64,6 +66,8 @@ call Output.println 0
 pop temp 0
 push argument 0
 call String.dispose 1
+pop temp 0
+call Player.rand 0
 pop temp 0
 push constant 0
 return

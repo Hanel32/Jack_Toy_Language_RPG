@@ -1,4 +1,5 @@
 class Main {
+
     function void main() {
         // Player Variables
         var int job;
@@ -37,11 +38,11 @@ class Main {
             do Player.setAttack(10);
             do Player.setAccuracy(12);
             do Dialogue.mage();
-        }
-        
+        }        
 
         do Dialogue.questHub();
 
         return;
     }
+    
 }

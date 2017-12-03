@@ -7,10 +7,29 @@ class Player {
     static int current_hp, max_hp;                // Player's health
     static int attack, defence, skill, acc;       // Player's attributes
     static int item_1, item_2, item_3;            // Items needed for boss
+    static int seed;
+
+    function int mod(int a, int b) {
+        while(a > b) {
+            let a = a - b;
+        }
+
+        if (a < 0) {
+            let a = -a;
+        }
+
+        return a;
+    }
+
+    function int rand() {
+        let seed = Player.mod(199 * seed, 7919);
+        return seed;
+    }
 
     // Initialization of Player variables
     function void init(){
         
+        let seed       = 0;
         let gold       = 100;
         let skill      = 10;
         let job        = 0;
@@ -28,88 +47,104 @@ class Player {
     // Gold setter
     function void setGold(int coins) {
         let gold = coins;
+        do Player.rand();
         return;
     }
 
     // Gold getter
     function int getGold(){
+        do Player.rand();
         return gold;
     }
 
     // Skill setter
     function void setSkill(int agil) {
         let skill = agil;
+        do Player.rand();
         return;
     }
 
     // Skill getter
     function int getSkill(){
+        do Player.rand();
         return skill;
     }
 
     // Attack setter
     function void setAttack(int att){
         let attack = att;
+        do Player.rand();
         return;
     }
 
     // Attack getter
     function int getAttack(){
+        do Player.rand();
         return attack;
     }
 
     // Defence setter
     function void setDefence(int def){
         let defence = def;
+        do Player.rand();
         return;
     }
 
     // Defence getter
     function int getDefence(){
+        do Player.rand();
         return defence;
     }
 
     // Health setter
     function void setHealth(int hp){
         let current_hp = hp;
+        do Player.rand();
         return;
     }
 
     // Health getter
     function int getHealth(){
+        do Player.rand();
         return current_hp;
     }
 
     // Max Health setter
     function void setMaxHealth(int hp){
         let max_hp = hp;
+        do Player.rand();
         return;
     }
 
     // Max Health getter
     function int getMaxHealth(){
+        do Player.rand();
         return max_hp;
     }
     
     // Job setter
     function void setJob(int occ){
         let job = occ;
+        do Player.rand();
         return;
     }
 
     // Accuracy getter
     function int getAccuracy(){
+        do Player.rand();
         return acc;
     }
     
     // Acccuracy setter
     function void setAccuracy(int a){
         let acc = a;
+        do Player.rand();
         return;
     }
 
     // Job getter
     function int getJob(){
+        do Player.rand();
         return job;
     }
 
@@ -124,6 +159,7 @@ class Player {
         if (type = 2) {
             let skill_pot  = skill_pot  + quantity;
         }
+        do Player.rand();
         return;
     }
     // Potion drinker
@@ -146,6 +182,7 @@ class Player {
             let skill      = skill + 10;
             return;
         }
+        do Player.rand();
         return;
     }
 }
