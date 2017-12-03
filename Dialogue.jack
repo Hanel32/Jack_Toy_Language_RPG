@@ -1,4 +1,14 @@
 class Dialogue {
+    function void interactiveDelay() {
+        // Gives the player time to see this screen text
+        var int waitloop;
+        let waitloop = -1; 
+        while(waitloop) {
+            let waitloop = Keyboard.readInt("Enter 0 to continue: ");
+        }
+        return;
+    }
+
     function void print(String s){
         do Output.printString(s);
         do Output.println();
@@ -54,6 +64,7 @@ class Dialogue {
         // hp      = 80;
         // attk    = 12;
         // acc     = 10;
+        do Dialogue.interactiveDelay();
         return;
     }
 
@@ -68,6 +79,8 @@ class Dialogue {
         do Dialogue.print("Game:   Your job is Warrior, and you attack with strength and");
         do Dialogue.print("        vitality. Because of this, your hitpoints have been set");
         do Dialogue.print("        to 120. Your attack average is 8 points. Good luck!");
+        do Dialogue.interactiveDelay();
+        // Add initialization of class attributes
         return;
     }
 
@@ -83,6 +96,8 @@ class Dialogue {
         do Dialogue.print("        Because of this, your intellect is set to 20, and your");
         do Dialogue.print("        hitpoints have been set to 100. Your attack average is");
         do Dialogue.print("        10 points. Good luck, and God speed.");
+        do Dialogue.interactiveDelay();
+        // Add initialization of class attributes
         return;
     }
 
@@ -122,21 +137,35 @@ class Dialogue {
         return;
     }
 
-    function int shop_potion() {
+    function void shop_potion() {
         var int decision;
+        var int num;
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
         do Dialogue.print("You've chosen potions!");
-        do Output.println();
         do Dialogue.print("Which potion would you like?");
-        do Output.println();
         do Dialogue.print("1)Health: Increases health by (10),        costs 10g.");
         do Dialogue.print("2)Attack: Increases attack by (5),         costs 50g.");
         do Dialogue.print("3)Skill : Increases agility skill by (10), costs 99g.");
         do Dialogue.print("4)No thank you, no purchases for me today.");
         do Output.println();
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 4) {
+            do Dialogue.abstain();
+        }
+        else {
+            let num = Keyboard.readInt("How many would you like?");
+            if (decision = 1) {
+                do Dialogue.healthPot(num);
+            }
+            if (decision = 2) {
+                do Dialogue.attackPot(num);
+            }
+            if (decision = 3) {
+                do Dialogue.skillPot(num);
+            }
+        }
+        return;
     }
 
     function int shop_weapon() {
@@ -172,7 +201,7 @@ class Dialogue {
         return decision;
     }
 
-    function int riddle () {
+    function void riddle () {
         var int decision;
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
@@ -194,10 +223,19 @@ class Dialogue {
         do Dialogue.print("2) I believe the answer is stars.");
         do Dialogue.print("3) Bloody hell, I just want to kill things!");
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.riddle_bad();
+        }
+        if (decision = 2) {
+            do Dialogue.riddle_good();
+        }
+        if (decision = 3) {
+            do Dialogue.riddle_bad();
+        }
+        return;
     }
 
-    function int riddle_bad() {
+    function void riddle_bad() {
         var int decision;
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
@@ -209,7 +247,16 @@ class Dialogue {
         do Dialogue.print("2) Well, maybe it is stars...?");
         do Dialogue.print("3) Di'int you 'ear me last time, Ent?!?!");
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.riddle_bad();
+        }
+        if (decision = 2) {
+            do Dialogue.riddle_good();
+        }
+        if (decision = 3) {
+            do Dialogue.riddle_bad();
+        }
+        return;
     }
 
     function void riddle_good() {
@@ -221,6 +268,8 @@ class Dialogue {
         do Dialogue.print("Game: The Ent has granted you passage through his forest,");
         do Dialogue.print("      however, this does not grant you immunity... I do hope you");
         do Dialogue.print("      have prepared yourself for... 'The Murkwood Forest'...");
+        do Dialogue.interactiveDelay();
+        do Dialogue.forest_quest();
         return;
     }
 
@@ -241,10 +290,12 @@ class Dialogue {
         do Dialogue.print("       || |   '-`      || |    '-`     || |     '-`    || |     ");
         do Dialogue.print("      / '| \\          / '| \\         / '| \\         / '| \\  ");
         do Dialogue.print("________________________________________________________________");
+        do Dialogue.interactiveDelay();
+        do Dialogue.riddle();
         return;
     }
 
-    function int forest_quest() {
+    function void forest_quest() {
         var int decision;
         do Output.moveCursor(0,0);
    		do Screen.clearScreen();
@@ -261,10 +312,19 @@ class Dialogue {
         do Dialogue.print("      3) Spiderling's Grove");
         do Dialogue.print("      Brave adventurer, which path doth thou choose?: "); 
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.dark_hollow();
+        }
+        if (decision = 2) {
+            return;
+        }
+        if (decision = 3) {
+            return;
+        }
+        return;
     }
 
-    function int dark_hollow() {
+    function void dark_hollow() {
         var int decision;
         do Output.moveCursor(0,0);		
         do Screen.clearScreen();
@@ -285,14 +345,19 @@ class Dialogue {
         do Dialogue.print("      1) Run back to town. My life isn't worth this!");
         do Dialogue.print("      2) I am a bold adventurer! I can brave anything.");
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.questHub();
+        }
+        if (decision = 2) {
+            do Dialogue.first_fight();
+        }
+        return;
     }
 
-    function int first_fight() {
+    function void first_fight() {
         var int decision;
         do Output.moveCursor(0,0);
  		do Screen.clearScreen();
-        do Dialogue.print("xxxxYou walk over to the merchant's stall to see what goods he o");
         do Dialogue.print("Game:You run into the dark hallow with your newfound gallantry.");
         do Dialogue.print("     As you do, a spiderling jumps out and attacks you! Brave");
         do Dialogue.print("     hero, what shall you do?!");
@@ -300,36 +365,37 @@ class Dialogue {
         do Dialogue.print("     1) Run back to town. My life isn't worth this!");
         do Dialogue.print("     2) Kill the bugger! It's my life or his!");
         let decision = Keyboard.readInt("    Answer: ");
-        return decision;
+        if (decision = 1) {
+            do Dialogue.questHub();
+        }
+        if (decision = 2) {
+            return;
+        }
+        return;
     }
 
     function void questHub() {
         var int decision;
         do Output.moveCursor(0,0);
  		do Screen.clearScreen();
-        do Dialogue.print("________.    ._____________________________.                          ");
-        do Dialogue.print("(///(////\\  ///(///(///(///(///(///(///(////\\                       ");
-        do Dialogue.print("///(///(  \\///(///(///(///(///(///(///(///(  \\                      ");
-        do Dialogue.print("//(///(   ///(///(///(///(///(///(///(///(   |                        ");
-        do Dialogue.print("/(///(  .///(///(///(///(///(///(///(///(  . |                        ");
-        do Dialogue.print("    | .' |  ___    ___    ___   _____  | .'| |                        ");
-        do Dialogue.print("    | |.'| |_|_|  |_|_|  |_|_| |__|__| | |.' |                        ");
-        do Dialogue.print("    | '  | |_|_|  |_|_|  |_|_| |__|__| | ' . ||'--:|___._______.________________");
-        do Dialogue.print("__  |  .'|    __   _____    _ +++____  | .'| |  .|   .'    _/////////)");
-        do Dialogue.print("__| | |.'|   |  | |__|__|  |_+++++___| ||.' .'.|   .'    _//////////||");
-        do Dialogue.print("__| | '.'|   | .| |__|__|  |+++:++___| |' .'.|   .'     ////////////||");
-        do Dialogue.print("____|.'  |___|__|___________++::+______|.'.|   .'      (|<Moe's>|)//||");
-        do Dialogue.print("       .|   '-=-.'            :'       .|    .'        ||'/_____||/ ||");
-        do Dialogue.print("     .|   '   .    <The Inn>  :      .|    .'         .||/______||  ||");
-        do Dialogue.print("   .|   '   .                       .|   .'         .' | _______||  II");
-        do Dialogue.print("  |'--'|==||'--'|'--'|'--'|'--'|'-'|   .'         .'., ||       ||,.     ");
-        do Dialogue.print("======================================'         .'     II       II      +++");
-        do Dialogue.print("                                              .'         '     '       +++++");
-        do Dialogue.print("                                              '''''''''''     '   +   +++:++");
-        do Dialogue.print("================================.                            ' ;      ++::+");
-        do Dialogue.print("   +   +       +       +      .'         .'''''''''''''''''''           :'");
-        do Dialogue.print("    ;     '    '+   +       .'         .'   +     '    ,       +        :");
-        do Dialogue.print("________________________________________________________________________________");
+        do Dialogue.print("________.    ._____________________________.               _/////////) ");
+        do Dialogue.print("(///(////\\  ///(///(///(///(///(///(///(////\\          _//////////|| ");
+        do Dialogue.print("///(///(  \\///(///(///(///(///(///(///(///(  \\        ////////////|| ");
+        do Dialogue.print("//(///(   ///(///(///(///(///(///(///(///(   |         (|<Moe's>|)//|| ");
+        do Dialogue.print("/(///(  .///(///(///(///(///(///(///(///(  . |         ||/______||  || ");
+        do Dialogue.print("    | .' |  ___    ___    ___   _____  | .'| |         | _______||  II ");
+        do Dialogue.print("    | |.'| |_|_|  |_|_|  |_|_| |__|__| | |.' |         ||       || ");
+        do Dialogue.print("    | '  | |_|_|  |_|_|  |_|_| |__|__| | ' . ||'--:    II       II ");
+        do Dialogue.print("__  |  .'|    __   _____   ___   ___   | .'| |  .|   .  ");
+        do Dialogue.print("__| | |.'|   |  | |__|__| |_|_| |_|_|  ||.' .'.|   .'    ");
+        do Dialogue.print("__| | '.'|   | .| |__|__| |_|_| |_|_|  |' .'.|   .'     ");
+        do Dialogue.print("____|.'  |___|__|______________________|.'.|   .'      ");
+        do Dialogue.print("      .|     '   .    <The Inn>        .|    .'          ");
+        do Dialogue.print("    |'--'|==||'--'|'--'|'--'|'--'|'-'|   .'          ");
+        do Dialogue.interactiveDelay();
+        
+        do Output.moveCursor(0,0);
+ 		do Screen.clearScreen();
         do Dialogue.print("You open a weathered spruce door, and step out of the damp");
         do Dialogue.print("of the inn, into the half-light of the morning. Birds chirp h-");
         do Dialogue.print("appily around you. In front of you, you see a merchant, aswell");
@@ -348,6 +414,106 @@ class Dialogue {
         if (decision = 3) {
             do Dialogue.beggar();
         }
+        return;
+    }
+
+    function void healthPot(int num) {
+        do Output.moveCursor(0,0);		
+        do Screen.clearScreen();
+        do Player.setGold(Player.getGold() - (num * 10));
+        do Player.addPotion(0, num);
+        do Dialogue.print("You've chosen a health potion. (-10g)");
+        do Output.printString("Your leftover gold is: ");
+        do Output.printInt(Player.getGold());
+        do Output.println();
+        do Output.printString("You now have ");
+        do Output.printInt(num);
+        do Dialogue.print(" more health potion(s).");
+        do Output.println();
+        do Dialogue.print("                   _____ ");
+        do Dialogue.print("                  `.___,' ");
+        do Dialogue.print("                   (___) ");
+        do Dialogue.print("                   <   > ");
+        do Dialogue.print("                    ) ( ");
+        do Dialogue.print("                   /`-.\ ");
+        do Dialogue.print("                  /     \ ");
+        do Dialogue.print("                 / _    _\ ");
+        do Dialogue.print("                :,' `-.' `: ");
+        do Dialogue.print("                |  HEALTH | ");
+        do Dialogue.print("                :         : ");
+        do Dialogue.print("                 \       / ");
+        do Dialogue.print("                  `.___.' ");
+        do Dialogue.interactiveDelay();
+        do Dialogue.shop_potion();
+        return;
+    }
+
+    function void attackPot(int num) {
+        do Output.moveCursor(0,0);		
+        do Screen.clearScreen();
+        do Player.setGold(Player.getGold() - (num * 50));
+        do Player.addPotion(1, num);
+        do Dialogue.print("You've chosen an attack potion. (-50g)");
+        do Output.printString("Your leftover gold is: ");
+        do Output.printInt(Player.getGold());
+        do Output.println();
+        do Output.printString("You now have ");
+        do Output.printInt(num);
+        do Dialogue.print(" more attack potion(s).");
+        do Output.println();
+        do Dialogue.print("                   _____");
+        do Dialogue.print("                  `.___,' ");
+        do Dialogue.print("                   (___) ");
+        do Dialogue.print("                   <   > ");
+        do Dialogue.print("                    ) ( ");
+        do Dialogue.print("                   /`-.\ ");
+        do Dialogue.print("                  /     \ ");
+        do Dialogue.print("                 / _    _\ ");
+        do Dialogue.print("                :,' `-.' `: ");
+        do Dialogue.print("                |  ATTACK | ");
+        do Dialogue.print("                :         : ");
+        do Dialogue.print("                 \       / ");
+        do Dialogue.print("                  `.___.'  ");
+        do Dialogue.interactiveDelay();
+        do Dialogue.shop_potion();
+        return;
+    }
+
+    function void skillPot(int num) {
+        do Output.moveCursor(0,0);		
+        do Screen.clearScreen();
+        do Player.setGold(Player.getGold() - (num * 99));
+        do Player.addPotion(2, num);
+        do Dialogue.print("You've chosen a skill potion. (-99g)");
+        do Output.printString("Your leftover gold is: ");
+        do Output.printInt(Player.getGold());
+        do Output.println();
+        do Output.printString("You now have ");
+        do Output.printInt(num);
+        do Dialogue.print(" more skill potion(s).");
+        do Output.println();
+        do Dialogue.print("                   _____ ");
+        do Dialogue.print("                  `.___,' ");
+        do Dialogue.print("                   (___) ");
+        do Dialogue.print("                   <   > ");
+        do Dialogue.print("                    ) ( ");
+        do Dialogue.print("                   /`-.\ ");
+        do Dialogue.print("                  /     \  ");
+        do Dialogue.print("                 / _    _\ ");
+        do Dialogue.print("                :,' `-.' `: ");
+        do Dialogue.print("                |  SKILL  | ");
+        do Dialogue.print("                :         : ");
+        do Dialogue.print("                 \       / ");
+        do Dialogue.print("                  `.___.'  ");
+        do Dialogue.interactiveDelay();
+        do Dialogue.shop_potion();
+        return;
+    }
+ 
+    function void abstain() {
+        do Dialogue.print("You abstain from buying anything today.");
+        do Dialogue.interactiveDelay();
+        do Dialogue.questHub();
         return;
     }
 }

@@ -39,14 +39,8 @@ class Main {
             do Dialogue.mage();
         }
         
-        do Output.println();
-        do Output.println();
-        // Gives the player time to see this 
-        while(waitloop) {
-            let waitloop = Keyboard.readInt("Enter 0 to continue: ");
-        }
 
-        do Dialogue.questhub();
+        do Dialogue.questHub();
 
         return;
     }
