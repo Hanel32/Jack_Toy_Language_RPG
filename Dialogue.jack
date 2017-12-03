@@ -101,10 +101,6 @@ class Dialogue {
         return;
     }
 
-    function void beggar() {
-        return;
-    }
-
     function void shop() {
         var int decision;
         do Output.moveCursor(0,0);
