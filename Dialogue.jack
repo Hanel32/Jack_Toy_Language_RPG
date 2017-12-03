@@ -120,20 +120,9 @@ class Dialogue {
         do Dialogue.print("    [Attack]------[Wand]--------[Hide]------]");
         do Dialogue.print("    [Skill]-------[Knife]-------[Cloth]-----]");
         do Dialogue.print("    [_______________________________________]");
-        do Dialogue.print("    Please enter the type of item you would like");
-        do Dialogue.print("    Enter (1) for potions,");
-        do Dialogue.print("          (2) for weapons,"); 
-        do Dialogue.print("          (3) for armor ");
-        let decision = Keyboard.readInt("    Answer: ");
-        if (decision = 1) {
-            do Dialogue.shop_potion();
-        }
-        if (decision = 2) {
-            do Dialogue.shop_weapon();
-        }
-        if (decision = 3) {
-            do Dialogue.shop_armor();
-        }
+        do Dialogue.print("    Unfortunately, all we have in stock are potions....");
+        do Dialogue.interactiveDelay();
+        do Dialogue.shop_potion();
         return;
     }
 
@@ -166,39 +155,6 @@ class Dialogue {
             }
         }
         return;
-    }
-
-    function int shop_weapon() {
-        var int decision;
-        do Output.moveCursor(0,0);
-        do Screen.clearScreen();
-        do Dialogue.print("You've chosen weapons!");
-        do Output.println();
-        do Dialogue.print("Which weapon would you like?");
-        do Output.println();
-        do Dialogue.print("1)Sword: Increases total attack by 5. Costs 50g.");
-        do Dialogue.print("2)Wand : Increases total attack by 4. Costs 40g.");
-        do Dialogue.print("3)Knife: Increases total attack by 2. Costs 20g.");
-        do Dialogue.print("4)No thank you. No purchases for me today.");
-        let decision = Keyboard.readInt("    Answer: ");
-        return decision;
-    }
-
-    function int shop_armor() {
-        var int decision;
-        do Output.moveCursor(0,0);
-        do Screen.clearScreen();
-        do Dialogue.print("You've chosen Armor!");
-        do Output.println();
-        do Dialogue.print("Which armor would you like?");
-        do Output.println();
-        do Dialogue.print("1)Metal: Increases hp 10, decreases agility by 5. Costs 50g");
-        do Dialogue.print("2)Hide : Increases hp 8 , increases agility by 5. Costs 50g");
-        do Dialogue.print("3)Cloth: Increases hp 5 , increases agility by 8. Costs 50g");
-        do Dialogue.print("4)No thank you. No purchases for me today.");
-        do Output.println();
-        let decision = Keyboard.readInt("    Answer: ");
-        return decision;
     }
 
     function void riddle () {
