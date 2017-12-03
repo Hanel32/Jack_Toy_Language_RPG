@@ -416,6 +416,7 @@ class Dialogue {
         }
         return;
     }
+<<<<<<< HEAD
 
     function void healthPot(int num) {
         do Output.moveCursor(0,0);		
@@ -516,4 +517,81 @@ class Dialogue {
         do Dialogue.questHub();
         return;
     }
+=======
+    
+    function void beggar() {
+        var int decision;
+        do Output.moveCursor(0,0);
+ 		do Screen.clearScreen();
+        do Dialogue.print("Game:   You walk over to a man laying in rags in the ground, the");
+        do Dialogue.print("        air reeks of the stench of death, and birds circle above");
+        do Dialogue.print("        you as you peer down. A horrific sight! Suddenly, a hand");
+        do Dialogue.print("        comes out from under one of the rags, and you hear a sc-");
+        do Dialogue.print("        ratchy, abrasive voice dissonated by the wear of age.");
+        do Dialogue.print();
+        do Dialogue.print("Beggar: Sir... I beg of you, I need not much help, but perhaps");
+        do Dialogue.print("        some spare coin for food... I have not a family and not-");
+        do Dialogue.print("        hing I could give, but my eternal thanks and gratitude..");
+        do Dialogue.print();
+        do Dialogue.print("Game:   Traveller, the decision is in your hands.");
+        do Dialogue.print("            1) Bah! His issues are not my own. I have to live!");
+        do Dialogue.print("            2) Just give him some good old advice.");
+        do Dialogue.print("            3) Give the man 5 gold for bread, he needs it more.");
+        let decision = Keyboard.readInt("    Answer: ");
+        if (decision = 1) {
+            do Dialogue.beggar_leave();
+        }
+        if (decision = 2) {
+            do Dialogue.beggar_help();
+        }
+        return;
+    }
+    function void beggar_leave() {
+        do Output.moveCursor(0,0);
+        do Dialogue.print("Game:   You choose to walk away. You've got your own problems as");
+        do Dialogue.print("        an adventurer. Surely, someone else will come and help..");
+        do Dialogue.print("        As you turn away to return to the inn, you look back at");
+        do Dialogue.print("        the beggar in a moment of second guessing, and see that");
+        do Dialogue.print("        the birds that were flying overhead had swooped down to");
+        do Dialogue.print("        claim their prey. Perhaps next time, traveller, you'll");
+        do Dialogue.print("        think twice about your actions... The realization of");
+        do Dialogue.print("        what you've done hits you, and you lose 10 hit points...");
+        return;
+    }
+    function void beggar_help() {
+        do Output.moveCursor(0,0);
+        do Dialogue.print("Game:   You smile with understanding, and reach into your pocket");
+        do Dialogue.print("        to rummage for spare gold. You manage to find 5 coins to");
+        do Dialogue.print("        give the man, which he takes with appreciation. You pat");
+        do Dialogue.print("        his shoulder to wish him well, and turn around to head");
+        do Dialogue.print("        back towards the inn. As you do, an incredibly bright");
+        do Dialogue.print("        light emits from behind you, and you quickly turn in be-");
+        do Dialogue.print("        wilderment. The man in rags is now a great wizard!");
+        do Dialogue.print();
+        do Dialogue.interactiveDelay();
+        do Dialogue.wizard_beggar();
+    }
+    function void wizard_beggar() { 
+        do Output.moveCursor(0,0);
+        do Dialogue.print("                \  )(  /");
+        do Dialogue.print("                 \//\\/");
+        do Dialogue.print("   ( >>\\\\\  ___((*.))---");
+        do Dialogue.print("   )| . . |)     /\\//\");
+        do Dialogue.print("  ( |  |  |(    /  ||  \");
+        do Dialogue.print("   )\ mmm / )      ||");
+        do Dialogue.print("  (__mMMMm_(_     (__)");
+        do Dialogue.print(" /   mMMMm   \    /||");
+        do Dialogue.print("| |  mMMMm  \ \  / ||");
+        do Dialogue.print("| |   MMM   |\ \/  ||");
+        do Dialogue.print("| |   mMm   | \__  ||");
+        do Dialogue.print("| |   mMm   |    \ ||");
+        do Dialogue.print("| |____M____|     \||");
+        do Dialogue.print("| |    m    |      ||");
+        do Dialogue.print("|_|         |      ||");
+        do Dialogue.print("  |         |      ||");
+        do Dialogue.print("  |         |      ||");
+        do Dialogue.print("  |_________|      ||");
+    }
+        
+>>>>>>> cb935a0acdc2a6b2719fbd1018247b878efe492d
 }
