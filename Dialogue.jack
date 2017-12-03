@@ -292,7 +292,6 @@ class Dialogue {
         var int decision;
         do Output.moveCursor(0,0);
  		do Screen.clearScreen();
-        do Dialogue.print("xxxxYou walk over to the merchant's stall to see what goods he o");
         do Dialogue.print("Game:You run into the dark hallow with your newfound gallantry.");
         do Dialogue.print("     As you do, a spiderling jumps out and attacks you! Brave");
         do Dialogue.print("     hero, what shall you do?!");
@@ -352,7 +351,9 @@ class Dialogue {
     }
     
     function void beggar() {
-        do Dialogue.print("xxxxYou walk over to the merchant's stall to see what goods he o");
+        var int decision;
+        do Output.moveCursor(0,0);
+ 		do Screen.clearScreen();
         do Dialogue.print("Game:   You walk over to a man laying in rags in the ground, the");
         do Dialogue.print("        air reeks of the stench of death, and birds circle above");
         do Dialogue.print("        you as you peer down. A horrific sight! Suddenly, a hand");
