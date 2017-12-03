@@ -29,7 +29,7 @@ class Player {
     // Initialization of Player variables
     function void init(){
         
-        let seed       = 0;
+        let seed       = 199;
         let gold       = 100;
         let skill      = 10;
         let job        = 0;

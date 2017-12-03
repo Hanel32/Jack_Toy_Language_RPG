@@ -33,7 +33,7 @@ pop static 14
 push static 14
 return
 function Player.init 0
-push constant 0
+push constant 199
 pop static 14
 push constant 100
 pop static 0
