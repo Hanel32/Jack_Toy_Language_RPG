@@ -296,7 +296,7 @@ class Dialogue {
         do Dialogue.print("Game:You run into the dark hallow with your newfound gallantry.");
         do Dialogue.print("     As you do, a spiderling jumps out and attacks you! Brave");
         do Dialogue.print("     hero, what shall you do?!");
-        do Dialogue.print();
+        do Output.println();
         do Dialogue.print("     1) Run back to town. My life isn't worth this!");
         do Dialogue.print("     2) Kill the bugger! It's my life or his!");
         let decision = Keyboard.readInt("    Answer: ");
