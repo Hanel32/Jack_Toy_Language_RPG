@@ -755,7 +755,24 @@ class Dialogue {
     function void death_screen() {
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
-        do Dialogue.print("You have died. Try being a nicer person. You dick.");
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Dialogue.print("                              .___. ");
+        do Dialogue.print("          /)               ,-^     ^-. "); 
+        do Dialogue.print("         //               /           \\ ");
+        do Dialogue.print(".-------| |--------------/  __     __  \\-------------------._ ");
+        do Dialogue.print("|WMWMWMW| |>>>>>>>>>>>>> | />>\\   />>\\ |>>>>>>>>>>>>>>>>>>>>>> ");
+        do Dialogue.print("`-------| |--------------| \\__/   \\__/ |-------------------'^ ");
+        do Dialogue.print("         \\\\               \\    /|\\    / ");
+        do Dialogue.print("          \\)               \\   \\_/   / ");
+        do Dialogue.print("                            |       | ");
+        do Dialogue.print("                            |+H+H+H+| ");
+        do Dialogue.print("                            \\       / ");
+        do Dialogue.print("                             ^-----^ ");
+        do Output.println();
+        do Dialogue.print("                          YOU ARE DEAD!");
+        do Dialogue.print("                           GAME OVER!");
         do Dialogue.interactiveDelay();
         return;
     }
@@ -763,7 +780,27 @@ class Dialogue {
     function void victory_screen() {
         do Output.moveCursor(0,0);
         do Screen.clearScreen();
-        do Dialogue.print("You won the game! Maybe it's luck. Maybe it's Maybelline.");
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Dialogue.print("                |\\                     /) ");
+        do Dialogue.print("              /\\_\\\\__               (_// ");
+        do Dialogue.print("             |   `>\\-`     _._       //`) ");
+        do Dialogue.print("              \\ /` \\\\  _.-`:::`-._  // ");
+        do Dialogue.print("               `    \\|`    :::    `|/ ");
+        do Dialogue.print("                     |     :::     | ");
+        do Dialogue.print("                     |.....:::.....| ");
+        do Dialogue.print("                     |:::::::::::::| ");
+        do Dialogue.print("                     |     :::     | ");
+        do Dialogue.print("                     \\     :::     / ");
+        do Dialogue.print("                      \\    :::    / ");
+        do Dialogue.print("                       `-. ::: .-' ");
+        do Dialogue.print("                        //`:::`\\\\ ");
+        do Dialogue.print("                       //   '   \\\\ ");
+        do Dialogue.print("                      |/         \\\\ ");
+        do Output.println();
+        do Dialogue.print("                   YOU BEAT THE BEAST!");
+        do Dialogue.print("                        YOU WIN!");
         do Dialogue.interactiveDelay();
         return;
     }
